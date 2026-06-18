@@ -36,3 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 5000); // Transitions slide image every 5 seconds
   }
 });
+
+// 4. bfcache Fix — restores fade-in when user navigates back/forward
+window.addEventListener("pageshow", (e) => {
+  if (e.persisted) {
+    gsap.to("body", { opacity: 1, duration: 0.6, ease: "power2.out" });
+  }
+});
