@@ -1,15 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@300;400;500;600&display=swap");
+
 /* ==========================================================================
    1. Color Palette, Variable Tokens & Base Resets
    ========================================================================== */
 :root {
     --bg-cream: #f9f6f0;
     --accent-sage: #6e7e6a;
+    --accent-dark-green: #38543e;
     --text-dark: #1a1a1a;
     --text-muted: #555555;
+
+    /* Responsive Fluid Typography */
+    --fs-h1: clamp(2rem, 5vw, 2.5rem);
+    --fs-h3: clamp(1.3rem, 4vw, 1.5rem);
+    --fs-body: clamp(1rem, 2.5vw, 1.1rem);
+    --fs-muted: clamp(0.9rem, 2vw, 0.95rem);
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@300;400;500;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 * {
     margin: 0;
     padding: 0;
@@ -28,9 +35,11 @@ a {
     color: inherit;
     text-decoration: none;
     font-family: "Lato", sans-serif;
+    transition:
+        opacity 0.2s ease,
+        color 0.2s ease;
 }
 
-/* Active Nav Indicator Link */
 .active-nav {
     font-weight: 600 !important;
 }
@@ -40,7 +49,7 @@ a {
    ========================================================================== */
 header {
     width: 100%;
-    background-color: #38543e;
+    background-color: var(--accent-dark-green);
     padding: 1.5rem 2rem;
 }
 
@@ -48,9 +57,9 @@ header {
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between; /* Pushes logo left, nav links right */
-    align-items: center; /* Vertically centers items */
-    flex-wrap: nowrap; /* Guarantees elements stay on one row */
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 .logo {
@@ -58,18 +67,19 @@ header {
     font-weight: 600;
     letter-spacing: -0.5px;
     color: #fff;
-    white-space: nowrap; /* Keeps name from wrapping line early */
+    white-space: nowrap;
 }
 
 .nav-links {
     display: flex;
     gap: 2.5rem;
+    flex-wrap: wrap; /* Prevents text clipping on small viewports */
 }
 
 .nav-links a {
     color: #fff;
     font-family: "Lato", sans-serif;
-    font-weight: 100;
+    font-weight: 300;
 }
 
 /* ==========================================================================
@@ -79,6 +89,7 @@ header {
     position: relative;
     width: 100%;
     height: 70vh;
+    min-height: 400px; /* Ensures text has room on short mobile screens */
     background-color: #e2dfd8;
     overflow: hidden;
     display: flex;
@@ -106,18 +117,19 @@ header {
     position: relative;
     z-index: 10;
     text-align: center;
+    width: 100%;
     max-width: 600px;
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: var(--fs-h1);
     margin-bottom: 0.5rem;
     font-weight: 400;
 }
 
 .hero-text p {
-    font-size: 1.2rem;
+    font-size: var(--fs-body);
     color: var(--text-muted);
 }
 
@@ -137,17 +149,20 @@ main {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding-bottom: 1rem;
     margin-bottom: 3rem;
+    gap: 1rem;
 }
 
 .see-more {
     font-size: 0.9rem;
     text-transform: lowercase;
     color: var(--text-muted);
+    white-space: nowrap;
 }
 
-/* Main Grid Layout Framework (Balanced 1fr 2fr for compressed image sizes) */
+/* Main Layout Grid Modules */
 .work-row,
-.about-section {
+.about-section,
+.work-layout {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 4rem;
@@ -162,7 +177,7 @@ main {
 
 .row-label h3,
 .about-text h3 {
-    font-size: 1.5rem;
+    font-size: var(--fs-h3);
     font-weight: 400;
 }
 
@@ -171,11 +186,12 @@ main {
 .about-gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.3rem;
+    gap: 1.5rem; /* Increased slightly from 0.3rem for better breathing room */
 }
 
 .project-card {
     display: block;
+    width: 100%;
 }
 
 /* ==========================================================================
@@ -188,6 +204,7 @@ main {
     background-color: #dddcd7;
     margin-bottom: 0.75rem;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .project-card:hover .image-placeholder {
@@ -195,7 +212,7 @@ main {
 }
 
 .project-card p {
-    font-size: 0.95rem;
+    font-size: var(--fs-muted);
     color: var(--text-muted);
 }
 
@@ -203,7 +220,7 @@ main {
    6. About Me Block Elements
    ========================================================================== */
 .about-text p {
-    font-size: 1.1rem;
+    font-size: var(--fs-body);
     line-height: 1.6;
     margin-bottom: 1.5rem;
     color: var(--text-muted);
@@ -211,15 +228,17 @@ main {
 
 .about-sub-img {
     width: 100%;
-    aspect-ratio: 1; /* Crisp uniform squares */
+    aspect-ratio: 1;
     object-fit: cover;
     background-color: #dddcd7;
+    display: block;
 }
 
 .mini-thumb-row {
     display: flex;
     gap: 1rem;
     margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
 .mini-thumb {
@@ -228,15 +247,20 @@ main {
     object-fit: cover;
     background-color: #dddcd7;
     border-radius: 4px;
+    flex-shrink: 0;
 }
 
 /* ==========================================================================
    7. Photography Stream Template Layouts
    ========================================================================== */
-.work-layout {
-    display: grid;
-    grid-template-columns: 1fr 2fr; /* Matched 1fr 2fr grid alignment */
-    gap: 4rem;
+.sidebar-header {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    font-weight: 600;
 }
 
 .sidebar-nav ul {
@@ -252,15 +276,14 @@ main {
 .sidebar-nav a {
     color: var(--text-muted);
     font-size: 1.1rem;
-    transition: color 0.2s ease;
 }
 
-.sidebar-nav a:hover {
+.sidebar-nav a:hover,
+.sidebar-nav li.active a {
     color: var(--text-dark);
 }
 
 .sidebar-nav li.active a {
-    color: var(--text-dark);
     font-weight: bold;
 }
 
@@ -274,7 +297,6 @@ main {
     width: 100%;
 }
 
-/* Managed Responsive Image Placeholders inside the Stream */
 .large-placeholder {
     width: 100%;
     background-color: #dddcd7;
@@ -289,14 +311,13 @@ main {
     display: block;
 }
 
-/* Controlled image sizes for stream layout templates */
 .standard-landscape {
     aspect-ratio: 16/9;
 }
 
 .standard-portrait {
     aspect-ratio: 3/4;
-    max-width: 550px; /* Prevents portrait orientations from filling huge height gaps */
+    max-width: 550px;
 }
 
 .stream-text h3 {
@@ -306,7 +327,7 @@ main {
 }
 
 .stream-item p {
-    font-size: 1.1rem;
+    font-size: var(--fs-body);
     line-height: 1.6;
     color: var(--text-muted);
     max-width: 800px;
@@ -318,14 +339,20 @@ main {
 footer {
     background-color: var(--accent-sage);
     color: #ffffff;
-    padding: 4rem;
+    padding: 4rem 2rem;
     margin-top: 8rem;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    gap: 2rem;
 }
 
 .footer-links a {
@@ -355,6 +382,7 @@ footer {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .dot img {
@@ -364,34 +392,96 @@ footer {
 }
 
 /* ==========================================================================
-   9. Mobile Fluid Optimization Responsive Media Query
+   8b. Hero text legibility — ensure contrast over carousel images
    ========================================================================== */
+.hero-text h1 {
+    color: #ffffff;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+
+.hero-text p {
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   9a. Tablet Breakpoint (769px – 1024px)
+   ========================================================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    main {
+        padding: 3rem 1.5rem 0 1.5rem;
+    }
+
+    .work-row,
+    .about-section,
+    .work-layout {
+        gap: 2.5rem;
+        margin-bottom: 4rem;
+    }
+
+    .about-section {
+        margin-top: 5rem;
+        padding-top: 3rem;
+    }
+
+    .row-gallery,
+    .about-gallery {
+        gap: 1rem;
+    }
+
+    .stream-layout {
+        gap: 3.5rem;
+    }
+
+    footer {
+        margin-top: 5rem;
+    }
+}
+
+/* ==========================================================================
+   9b. Mobile Fluid Optimization Responsive Media Query (< 768px)
+   ========================================================================== */
+/* ==========================================================================
+      9. Mobile Fluid Optimization Responsive Media Query (< 768px)
+      ========================================================================== */
 @media (max-width: 768px) {
     header {
-        padding: 1.5rem 1.5rem;
+        padding: 1.5rem 1rem;
     }
 
     .header-container {
         flex-direction: column;
-        gap: 1rem;
         text-align: center;
     }
 
-    main,
-    .work-layout {
-        padding: 2rem 1.5rem;
+    .nav-links {
+        justify-content: center;
+        gap: 1.5rem;
     }
 
-    /* Collapse all structural page grids into consistent single column stacks */
+    main {
+        padding: 2rem 1rem 0 1rem;
+    }
+
+    .section-title-container {
+        margin-bottom: 2rem;
+    }
+
+    /* Collapse structural layout grids into consistent stacks */
     .work-row,
     .about-section,
     .work-layout {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 2.5rem;
         margin-bottom: 4rem;
     }
 
-    /* Keep filters readable as a centered horizontal row link group on mobile */
+    .about-section {
+        margin-top: 4rem;
+        padding-top: 2.5rem;
+    }
+
+    /* Filters break into smooth horizontal scroll/wrap on small profiles */
     .sidebar-nav ul {
         display: flex;
         justify-content: center;
@@ -405,32 +495,30 @@ footer {
         margin-bottom: 0;
     }
 
-    /* Stack gallery rows seamlessly on screens below mobile resolution breaks */
+    .sidebar-header {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    /* Inner galleries turn seamlessly to full width rows */
     .row-gallery,
-    .about-gallery,
-    .stream-layout {
+    .about-gallery {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
 
-    /* Restores absolute single column properties */
-    .project-card {
-        grid-column: span 1 !important;
-        width: 100%;
+    /* --- MOBILE IMAGE FILTERING PATCH --- */
+    /* Hides any project card inside a standard gallery row if it isn't the first item */
+    .row-gallery .project-card {
+        display: none;
     }
-
-    /* Forces uniform padding, 4:3 viewports and absolute image center locks */
-    .image-placeholder,
-    .large-placeholder,
-    .about-sub-img {
-        aspect-ratio: 4/3 !important;
-        max-width: 100% !important;
+    .row-gallery .project-card:first-child {
         display: block;
-        margin-left: auto;
-        margin-right: auto;
+        grid-column: span 1 !important; /* Forces the reporting wide image to adapt properly */
     }
+    /* ------------------------------------ */
 
-    /* Strict alignment rules across elements and text copy modules */
+    /* Absolute Center Rules for Elements and Copy */
     .row-label,
     .about-text,
     .stream-text,
@@ -452,21 +540,19 @@ footer {
         margin-left: auto;
         margin-right: auto;
     }
-}
 
-.sidebar-header {
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: 1.3rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text-muted);
-    margin-bottom: 2.5rem;
-    font-weight: 600;
-}
+    /* Image Viewport standardizations for mobile parity */
+    .image-placeholder,
+    .large-placeholder,
+    .about-sub-img {
+        aspect-ratio: 4/3 !important;
+        max-width: 100% !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-@media (max-width: 768px) {
-    .sidebar-header {
-        text-align: center;
-        margin-bottom: 0.5rem;
+    footer {
+        padding: 3rem 1rem;
+        margin-top: 4rem;
     }
 }
