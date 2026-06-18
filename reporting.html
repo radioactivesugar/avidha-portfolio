@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Avidha Raha | Reporting</title>
+        <title>Avidha Raha | Photography</title>
         <link rel="stylesheet" href="style.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     </head>
@@ -18,7 +18,16 @@
                     <a href="photography.html" class="transition-trigger"
                         >Photography</a
                     >
-                    <a href="index.html#about">About Me</a>
+
+                    <a
+                        href="reporting.html"
+                        class="transition-trigger active-nav"
+                        >Reporting</a
+                    >
+                    <a href="research.html" class="transition-trigger"
+                        >Research</a
+                    >
+                    <a href="#about">About Me</a>
                 </nav>
             </div>
         </header>
@@ -33,95 +42,210 @@
 
         <main class="work-layout">
             <nav class="sidebar-nav">
-                <h3 class="sidebar-header">Categories</h3>
-                <ul>
-                    <li>
-                        <a href="photography.html" class="transition-trigger"
-                            >Photography</a
+                <h3 class="sidebar-header">Reporting</h3>
+                <ul id="category-filters">
+                    <li
+                        class="active"
+                        data-filter="dialogue-earth-covering-climate-now"
+                    >
+                        <a href="#"
+                            >Dialogue Earth &amp; Covering Climate Now (coming
+                            soon)</a
                         >
                     </li>
-                    <li class="active">
-                        <a href="reporting.html" class="transition-trigger"
-                            >Reporting</a
+                    <li data-filter="usc-annenberg-media">
+                        <a href="#">USC Annenberg Media</a>
+                    </li>
+                    <li data-filter="the-wire">
+                        <a href="#">The Wire</a>
+                    </li>
+                    <li
+                        data-filter="nagaland-living-heritage-the-german-consulate"
+                    >
+                        <a href="#"
+                            >Nagaland Living Heritage &amp; The German
+                            Consulate</a
                         >
                     </li>
-                    <li>
-                        <a href="research.html" class="transition-trigger"
-                            >Research</a
-                        >
+                    <li data-filter="the-telegraph">
+                        <a href="#">The Telegraph</a>
+                    </li>
+                    <li data-filter="peoples-archive-of-rural-india">
+                        <a href="#">People’s Archive of Rural India</a>
+                    </li>
+                    <li data-filter="travel-leisure">
+                        <a href="#">Travel + Leisure</a>
+                    </li>
+                    <li data-filter="national-geographic-traveller">
+                        <a href="#">National Geographic Traveller</a>
+                    </li>
+                    <li data-filter="heritage-himalaya">
+                        <a href="#">Heritage Himalaya</a>
                     </li>
                 </ul>
             </nav>
 
             <section class="stream-layout">
-                <div class="stream-item">
+                <div
+                    class="stream-item"
+                    data-category="dialogue-earth-covering-climate-now"
+                >
+                    <div class="large-placeholder standard-landscape">
+                        <img
+                            src="https://picsum.photos/1200/675?random=41"
+                            alt="Migration project image"
+                        />
+                    </div>
+                    <div class="stream-text">
+                        <h3>Avian Migration Ecosystems</h3>
+                        <p>
+                            A visual exploration documentation tracking species
+                            distribution shifts over coastal habitats. Capturing
+                            fleeting timeline changes through a
+                            photojournalistic perspective.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="stream-item" data-category="usc-annenberg-media">
                     <div class="large-placeholder standard-landscape">
                         <img
                             src="https://picsum.photos/1200/675?random=51"
-                            alt="Coastal industrial report"
+                            alt="Coastal wetland ecosystems"
                         />
                     </div>
                     <div class="stream-text">
-                        <h3>
-                            Exclusive Field Report: The Paint Industry
-                            Ecosystems
-                        </h3>
+                        <h3>Saltwater Boundaries</h3>
                         <p>
-                            An in-depth investigation into environmental policy
-                            shifts surrounding commercial production facilities
-                            along state lines. Localized data highlights
-                            immediate vulnerabilities in surrounding residential
-                            watersheds.
+                            An in-depth look at wetland regions struggling to
+                            adapt to rising tides and changing salt
+                            concentrations over several years.
                         </p>
                     </div>
                 </div>
 
-                <div class="stream-item">
-                    <div class="stream-text">
-                        <h3>
-                            Policy at the Boundary: Negotiating Urban Growth
-                            Limits
-                        </h3>
-                        <p>
-                            Legislative frameworks designed to curb urban sprawl
-                            face historic pressure as infrastructure demand
-                            increases. This dispatch details the ongoing legal
-                            battles over greenfield zones, ecological corridors,
-                            and municipal expansion metrics.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="stream-item">
+                <div class="stream-item" data-category="the-wire">
                     <div class="large-placeholder standard-portrait">
                         <img
-                            src="https://picsum.photos/600/800?random=52"
-                            alt="Resource logistics tracking"
+                            src="https://picsum.photos/600/800?random=42"
+                            alt="Urban ecology portrait"
                         />
                     </div>
                     <div class="stream-text">
-                        <h3>Supply Lines and Sustainable Materials</h3>
+                        <h3>Urban Coexistence Stories</h3>
                         <p>
-                            Tracking the global journey of raw building elements
-                            from harvest to metropolitan processing hubs. The
-                            environmental footprint shifts drastically as
-                            regional oversight mandates conflict with supply
-                            logistics chains.
+                            Focusing on close-quarters interactions between
+                            wildlife and expanding developmental boundaries.
+                            Every detail highlights the resilience within modern
+                            architectural landscapes.
                         </p>
                     </div>
                 </div>
 
-                <div class="stream-item">
+                <div
+                    class="stream-item"
+                    data-category="nagaland-living-heritage-the-german-consulate"
+                >
+                    <div class="large-placeholder standard-landscape">
+                        <img
+                            src="https://picsum.photos/1200/675?random=52"
+                            alt="City development grid"
+                        />
+                    </div>
                     <div class="stream-text">
-                        <h3>
-                            Community Responses to Micro-Climate Fluctuations
-                        </h3>
+                        <h3>The Transit Corridor</h3>
                         <p>
-                            While top-down climate projections dominate public
-                            discourse, regional agricultural cooperatives are
-                            engineering immediate, localized solutions to
-                            erratic weather tables. Reporting on the ground from
-                            independent test sites.
+                            Documenting night shifts and structural evolution
+                            along newly commissioned rapid transit paths
+                            bisecting old neighbourhoods.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="stream-item" data-category="the-telegraph">
+                    <div class="large-placeholder standard-landscape">
+                        <img
+                            src="https://picsum.photos/1200/675?random=43"
+                            alt="Environmental narrative frame"
+                        />
+                    </div>
+                    <div class="stream-text">
+                        <h3>The Changing Micro-Climate</h3>
+                        <p>
+                            Macro framing and visual records documenting the
+                            direct, tangible impacts of localized weather
+                            patterns on flora communities across regional state
+                            lines.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="stream-item"
+                    data-category="peoples-archive-of-rural-india"
+                >
+                    <div class="large-placeholder standard-portrait">
+                        <img
+                            src="https://picsum.photos/600/800?random=53"
+                            alt="Midday market geometry"
+                        />
+                    </div>
+                    <div class="stream-text">
+                        <h3>Intersections in Shadow</h3>
+                        <p>
+                            Studying geometric light shafts piercing market
+                            canopy frameworks during peak summer midday hours.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="stream-item" data-category="travel-leisure">
+                    <div class="large-placeholder standard-landscape">
+                        <img
+                            src="https://picsum.photos/1200/675?random=60"
+                            alt="Travel project placeholder"
+                        />
+                    </div>
+                    <div class="stream-text">
+                        <h3>Project Title Goes Here</h3>
+                        <p>
+                            Add your content description for Travel + Leisure
+                            stories here.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="stream-item"
+                    data-category="national-geographic-traveller"
+                >
+                    <div class="large-placeholder standard-landscape">
+                        <img
+                            src="https://picsum.photos/1200/675?random=61"
+                            alt="NatGeo placeholder"
+                        />
+                    </div>
+                    <div class="stream-text">
+                        <h3>Project Title Goes Here</h3>
+                        <p>
+                            Add your content description for National Geographic
+                            Traveller stories here.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="stream-item" data-category="heritage-himalaya">
+                    <div class="large-placeholder standard-portrait">
+                        <img
+                            src="https://picsum.photos/600/800?random=62"
+                            alt="Himalaya placeholder"
+                        />
+                    </div>
+                    <div class="stream-text">
+                        <h3>Project Title Goes Here</h3>
+                        <p>
+                            Add your content description for Heritage Himalaya
+                            stories here.
                         </p>
                     </div>
                 </div>

@@ -20,7 +20,14 @@
                         class="transition-trigger active-nav"
                         >Photography</a
                     >
-                    <a href="index.html#about">About Me</a>
+
+                    <a href="reporting.html" class="transition-trigger"
+                        >Reporting</a
+                    >
+                    <a href="research.html" class="transition-trigger"
+                        >Research</a
+                    >
+                    <a href="#about">About Me</a>
                 </nav>
             </div>
         </header>
@@ -35,28 +42,23 @@
 
         <main class="work-layout">
             <nav class="sidebar-nav">
-                <h3 class="sidebar-header">Categories</h3>
-                <ul>
-                    <li class="active">
-                        <a href="photography.html" class="transition-trigger"
-                            >Photography</a
-                        >
+                <h3 class="sidebar-header">Photography</h3>
+                <ul id="category-filters">
+                    <li class="active" data-filter="documentary">
+                        <a href="#">Documentary</a>
                     </li>
-                    <li>
-                        <a href="reporting.html" class="transition-trigger"
-                            >Reporting</a
-                        >
+                    <li data-filter="photojournalism">
+                        <a href="#">Photojournalism</a>
                     </li>
-                    <li>
-                        <a href="research.html" class="transition-trigger"
-                            >Research</a
-                        >
+                    <li data-filter="street">
+                        <a href="#">Street</a>
                     </li>
                 </ul>
             </nav>
 
             <section class="stream-layout">
-                <div class="stream-item">
+                <!-- ==================== DOCUMENTARY PROJECTS ==================== -->
+                <div class="stream-item" data-category="documentary">
                     <div class="large-placeholder standard-landscape">
                         <img
                             src="https://picsum.photos/1200/675?random=41"
@@ -74,7 +76,25 @@
                     </div>
                 </div>
 
-                <div class="stream-item">
+                <div class="stream-item" data-category="documentary">
+                    <div class="large-placeholder standard-landscape">
+                        <img
+                            src="https://picsum.photos/1200/675?random=51"
+                            alt="Coastal wetland ecosystems"
+                        />
+                    </div>
+                    <div class="stream-text">
+                        <h3>Saltwater Boundaries</h3>
+                        <p>
+                            An in-depth look at wetland regions struggling to
+                            adapt to rising tides and changing salt
+                            concentrations over several years.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ==================== PHOTOJOURNALISM PROJECTS ==================== -->
+                <div class="stream-item" data-category="photojournalism">
                     <div class="large-placeholder standard-portrait">
                         <img
                             src="https://picsum.photos/600/800?random=42"
@@ -92,7 +112,25 @@
                     </div>
                 </div>
 
-                <div class="stream-item">
+                <div class="stream-item" data-category="photojournalism">
+                    <div class="large-placeholder standard-landscape">
+                        <img
+                            src="https://picsum.photos/1200/675?random=52"
+                            alt="City development grid"
+                        />
+                    </div>
+                    <div class="stream-text">
+                        <h3>The Transit Corridor</h3>
+                        <p>
+                            Documenting night shifts and structural evolution
+                            along newly commissioned rapid transit paths
+                            bisecting old neighbourhoods.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ==================== STREET PROJECTS ==================== -->
+                <div class="stream-item" data-category="street">
                     <div class="large-placeholder standard-landscape">
                         <img
                             src="https://picsum.photos/1200/675?random=43"
@@ -106,6 +144,22 @@
                             direct, tangible impacts of localized weather
                             patterns on flora communities across regional state
                             lines.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="stream-item" data-category="street">
+                    <div class="large-placeholder standard-portrait">
+                        <img
+                            src="https://picsum.photos/600/800?random=53"
+                            alt="Midday market geometry"
+                        />
+                    </div>
+                    <div class="stream-text">
+                        <h3>Intersections in Shadow</h3>
+                        <p>
+                            Studying geometric light shafts piercing market
+                            canopy frameworks during peak summer midday hours.
                         </p>
                     </div>
                 </div>
