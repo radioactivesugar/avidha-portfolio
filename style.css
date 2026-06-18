@@ -160,8 +160,20 @@ main {
 }
 
 /* Main Layout Grid Modules */
-.work-row,
-.about-section,
+.work-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    margin-bottom: 6rem;
+}
+
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 6rem;
+}
+
 .work-layout {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -186,7 +198,7 @@ main {
 .about-gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem; /* Increased slightly from 0.3rem for better breathing room */
+    gap: 0.3rem; /* Increased slightly from 0.3rem for better breathing room */
 }
 
 .project-card {
