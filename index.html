@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Avidha Raha | Home</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    </head>
+    <body>
+        <!-- Header Navigation Area -->
+        <header>
+            <div class="header-container">
+                <a href="index.html" class="logo transition-trigger">Avidha</a>
+                <nav class="nav-links">
+                    <a href="index.html" class="transition-trigger active-nav"
+                        >Home</a
+                    >
+                    <a href="photography.html" class="transition-trigger"
+                        >Photography</a
+                    >
+                    <a href="#about">About Me</a>
+                </nav>
+            </div>
+        </header>
+        <!-- Top accent line -->
+        <!--<div
+            style="
+                background-color: var(--accent-sage);
+                height: 10px;
+                width: 100%;
+            "
+        ></div>-->
+
+        <section class="hero-carousel">
+            <div
+                class="carousel-slide active"
+                style="
+                    background-image:
+                        linear-gradient(
+                            rgba(249, 246, 240, 0.85),
+                            rgba(249, 246, 240, 0.85)
+                        ),
+                        url(&quot;https://picsum.photos/1920/1080?random=1&quot;);
+                "
+            ></div>
+            <div
+                class="carousel-slide"
+                style="
+                    background-image:
+                        linear-gradient(
+                            rgba(249, 246, 240, 0.85),
+                            rgba(249, 246, 240, 0.85)
+                        ),
+                        url(&quot;https://picsum.photos/1920/1080?random=2&quot;);
+                "
+            ></div>
+
+            <div class="hero-text">
+                <h1>Hi, I am Avidha.</h1>
+                <p>A photojournalist and a writer</p>
+            </div>
+        </section>
+
+        <main>
+            <div class="section-title-container">
+                <h2>What I do</h2>
+                <a href="photography.html" class="see-more transition-trigger"
+                    >see more</a
+                >
+            </div>
+
+            <section class="work-row">
+                <div class="row-label">
+                    <h3>
+                        <a href="photography.html" class="transition-trigger"
+                            >Photography</a
+                        >
+                    </h3>
+                </div>
+                <div class="row-gallery">
+                    <a
+                        href="photography.html"
+                        class="project-card transition-trigger"
+                    >
+                        <img
+                            src="https://picsum.photos/600/450?random=11"
+                            alt="Photography Project"
+                            class="image-placeholder"
+                        />
+                        <p>Something about this project</p>
+                    </a>
+                    <a
+                        href="photography.html"
+                        class="project-card transition-trigger"
+                    >
+                        <img
+                            src="https://picsum.photos/600/450?random=12"
+                            alt="Photography Project"
+                            class="image-placeholder"
+                        />
+                        <p>Something about this project</p>
+                    </a>
+                </div>
+            </section>
+
+            <section class="work-row">
+                <div class="row-label">
+                    <h3>
+                        <a href="reporting.html" class="transition-trigger"
+                            >Reporting</a
+                        >
+                    </h3>
+                </div>
+                <div class="row-gallery">
+                    <a
+                        href="reporting.html"
+                        class="project-card transition-trigger"
+                        style="grid-column: span 2"
+                    >
+                        <img
+                            src="https://picsum.photos/1200/514?random=13"
+                            alt="Reporting Project"
+                            class="image-placeholder structural-wide"
+                        />
+                        <p>Something about this project</p>
+                    </a>
+                </div>
+            </section>
+
+            <section class="work-row">
+                <div class="row-label">
+                    <h3>
+                        <a href="reporting.html" class="transition-trigger"
+                            >Reporting</a
+                        >
+                    </h3>
+                </div>
+                <div class="row-gallery">
+                    <a
+                        href="photography.html"
+                        class="project-card transition-trigger"
+                    >
+                        <img
+                            src="https://picsum.photos/600/450?random=11"
+                            alt="Photography Project"
+                            class="image-placeholder"
+                        />
+                        <p>Something about this project</p>
+                    </a>
+                    <a
+                        href="photography.html"
+                        class="project-card transition-trigger"
+                    >
+                        <img
+                            src="https://picsum.photos/600/450?random=12"
+                            alt="Photography Project"
+                            class="image-placeholder"
+                        />
+                        <p>Something about this project</p>
+                    </a>
+                </div>
+            </section>
+
+            <section id="about" class="about-section">
+                <div class="about-text">
+                    <h3>About me</h3>
+                    <br />
+                    <p>Long Bio</p>
+                    <p>Awards</p>
+
+                    <div class="mini-thumb-row">
+                        <img
+                            src="https://picsum.photos/100/100?random=21"
+                            alt="Thumbnail"
+                            class="mini-thumb"
+                        />
+                        <img
+                            src="https://picsum.photos/100/100?random=22"
+                            alt="Thumbnail"
+                            class="mini-thumb"
+                        />
+                        <img
+                            src="https://picsum.photos/100/100?random=23"
+                            alt="Thumbnail"
+                            class="mini-thumb"
+                        />
+                    </div>
+                </div>
+
+                <div class="about-gallery">
+                    <img
+                        src="https://picsum.photos/500/500?random=14"
+                        alt="About Image 1"
+                        class="about-sub-img"
+                    />
+                    <img
+                        src="https://picsum.photos/500/500?random=15"
+                        alt="About Image 2"
+                        class="about-sub-img"
+                    />
+                    <img
+                        src="https://picsum.photos/500/500?random=16"
+                        alt="About Image 3"
+                        class="about-sub-img"
+                    />
+                    <img
+                        src="https://picsum.photos/500/500?random=17"
+                        alt="About Image 4"
+                        class="about-sub-img"
+                    />
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="index.html" class="transition-trigger">Home</a>
+                    <a href="photography.html" class="transition-trigger"
+                        >My Projects</a
+                    >
+                    <a href="#about">About Me</a>
+                    <br /><br />
+                    <p>avidha c.2026</p>
+                </div>
+                <div class="footer-right">
+                    <div class="social-dots">
+                        <img
+                            src="https://picsum.photos/70/70?random=31"
+                            alt="Social Media Link"
+                            class="dot"
+                        />
+                        <img
+                            src="https://picsum.photos/70/70?random=32"
+                            alt="Social Media Link"
+                            class="dot"
+                        />
+                        <img
+                            src="https://picsum.photos/70/70?random=33"
+                            alt="Social Media Link"
+                            class="dot"
+                        />
+                        <img
+                            src="https://picsum.photos/70/70?random=34"
+                            alt="Social Media Link"
+                            class="dot"
+                        />
+                        <img
+                            src="https://picsum.photos/70/70?random=35"
+                            alt="Social Media Link"
+                            class="dot"
+                        />
+                        <img
+                            src="https://picsum.photos/70/70?random=36"
+                            alt="Social Media Link"
+                            class="dot"
+                        />
+                    </div>
+                    <p>avidha@gmail.com</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>
